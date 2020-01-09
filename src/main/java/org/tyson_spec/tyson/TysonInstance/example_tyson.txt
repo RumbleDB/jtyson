@@ -1,0 +1,57 @@
+("object") {
+	"tundra" : ("biome") {
+					"id" : ("integer") 2,
+					"name" : ("string") "tundra",
+					"inhabitants" : null,
+					"is inhabited" : true,
+					"animal species" : ("integer") 500,
+					"characteristic plants" : ("array") [
+													("plant") "dwarf shrub",
+													("plant") "sedge",
+													("plant") "grass",
+													("plant") "moss",
+													("plant") "lichen"
+													],
+					"occurrences" : ("array")	[
+													("region") "arctic tundra",
+													("region") "alpine tundra",
+													("region") "antarctic tundra"
+												],
+					"area" : ("double") 3e9,
+					"climatic classification" : ("object") {
+													"polar climate" : ("thisisareallylongnameforanarray") [("climate") {
+																			"temperature" : ("temperature") {
+																								"MIN" : ("decimal") "-40.8",
+																								"MAX" : ("decimal") 10.2,
+																								"MEAN": 0
+																							},
+																			"precipitation": {
+																								"MIN" : ("decimal") "200.0",
+																								"MAX" : ("decimal") 1500.0,
+																								"MEAN":				1000.0
+																							}
+																			},
+																		("boolean") "false",
+																		("userdefinedatomicvaluewithreallylongname") 2
+																		]					
+													
+													},
+													"alpine climate": ("climate") {
+																			"temperature" : ("temperature") {
+																								"MIN" : ("decimal") "-20.8",
+																								"MAX" : ("decimal") 15.1,
+																								"MEAN": 0
+																							},
+																			"precipitation": {
+																								"MIN" : ("decimal") "100.0",
+																								"MAX" : ("decimal") 1200.0,
+																								"MEAN":				600
+																							}
+																			}
+												}
+				}
+	}
+					
+					
+	
+	

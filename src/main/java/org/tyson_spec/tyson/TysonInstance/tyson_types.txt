@@ -1,0 +1,78 @@
+("object"){
+	"number-examples" : {
+				"integer-annotated" : 			("integer")	2,
+				"integer-not-annotated":		2,
+				"integer-annotated-quotes":		("integer") "2",
+				"integer-not-annotated-quotes": "2",
+				
+				"double-annotated" : 			("double")	2e3,
+				"double-not-annotated":			2e3,
+				"double-annotated-quotes":		("double") "2e3",
+				"double-not-annotated-quotes": 	"2e3",
+				"double-like-integer" :			("double") 2,
+				"double-NaN-annotated" :		("double") "NaN",
+				"double-NaN-not-annotated" :	"NaN",
+				"double-+INF-annotated" :		("double") "+INF",
+				"double-+INF-not-annotated" :	"+INF",
+				"double--INF-annotated" :		("double") "-INF",
+				"double--INF-not-annotated" :	"-INF",
+				
+				"decimal-annotated" : 			("decimal")	2.3,
+				"decimal-not-annotated":		2.3,
+				"decimal-annotated-quotes":		("decimal") "2.3",
+				"decimal-not-annotated-quotes": "2.3",
+				"decimal-like-integer" :		("decimal") 2
+	},
+	"string-examples" : {
+				"string-annotated" : 			("string") "hello I am a String :)",
+				"string-not-annotated" : 		"hello I am a String :)",
+				"empty-string-annotated" : 		("string") "",
+				"empty-string-not-annotated" : 	"",
+				"string-containing-numbers" : 	("string") "H3770 1 AM A STR1NG"
+
+	},
+	"boolean-examples": {
+				"true-annotated-quoted" : 		("boolean") "true",
+				"true-annotated-not-quoted" : 	("boolean") true,
+				"true-not-annotated-quoted" : 	"true",
+				"true-not-annotated-not-quoted": true,
+				"false-annotated-quoted" : 		("boolean") "false",
+				"false-annotated-not-quoted" : 	("boolean") false,
+				"false-not-annotated-quoted" : 	"false",
+				"false-not-annotated-not-quoted": false
+	},
+	"null-examples" : {
+				"null-annotated-quoted" : 		("null") "null",
+				"null-annotated-not-quoted" : 	("null") null,
+				"null-not-annotated-quoted" : 	"null",
+				"null-not-annotated-not-quoted": null			
+	},
+	"array-examples" : {
+				"empty-array-annotated" :		("array") [],
+				"empty-array-not-annotated" :	[],
+				"array-annotated" :				("array") [1,2,3,4],
+				"array-not-annotated" :			[1,2,3,4],
+				"nested-array-annotated" :		("array") [1, 2, 3, ("array") [4, 5, 6], 7],
+				"nested-array-not-annotated" : 	[1, 2, 3, [4, 5, 6], 7]
+	},
+	"object-examples" : {
+				"empty-object-annotated" :		("object") {},
+				"empty-object-not-annotated" :	{},
+				"object-annotated" :			("object") { "key1": 1, "key2": 2},
+				"object-not-annotated" :		{ "key1": 1, "key2": 2},
+				"nested-object-annotated" :		("object") { "key1": 1, "key2": ("object") { "key3": 3, "key4": 4}, "key5":  5},
+				"nested-object-not-annotated" : { "key1": 1, "key2": { "key3": 3, "key4": 4}, "key5":  5}
+	},
+	"userdefined-examples" : {
+				"userdefined-atomic-string" :	("short-string") "hey",
+				"userdefined-atomic-integer":	("fantasy-number") "23948209840",
+				
+				"userdefined-empty-array":		("flowers-array") [],
+				"userdefined-array":			("flowers-array") ["Tulip", "Daffodil", "Poppy", "Sunflower", "Bluebell", "Rose", "Snowdrop", "Cherry blossom", "Orchid", "Iris", "Peony", "Chrysanthemum", "Geranium"],
+				
+				"userdefined-empty-object":		("flower-colours") {},
+				"userdefined-object":			("flower-colours") {"Tulip": "purple", "Daffodil": "yellow", "Poppy": "red", "Sunflower": "yellow", "Bluebell": "blue", "Rose": "red", "Snowdrop": "white", "Cherry blossom": "pink", "Orchid": "white", "Iris": "purple", "Peony": "pink", "Chrysanthemum": "white", "Geranium": "pink"},
+				"userdefined-object-annotated":	("flower-colours") {"Tulip": ("colour") "purple", "Daffodil": ("colour") "yellow", "Poppy": ("colour") "red", "Sunflower": ("colour") "yellow", "Bluebell": ("colour") "blue", "Rose": ("colour") "red", "Snowdrop": ("colour") "white", "Cherry blossom": ("colour") "pink", "Orchid": ("colour") "white", "Iris": ("colour") "purple", "Peony": ("colour") "pink", "Chrysanthemum": ("colour") "white", "Geranium": ("colour") "pink"}
+				
+	}
+}

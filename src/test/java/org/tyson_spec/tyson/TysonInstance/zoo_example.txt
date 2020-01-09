@@ -1,0 +1,15 @@
+("zoo_data") {
+	"location": ("city") {
+			"name": "Zurich",
+			"population": ("integer") "415215",
+			"area" : ("km2") 87.88
+	},
+	"annual_visitors": ("double") 12e5,
+	"area_ha": ("decimal") 27.9,
+	"no_animals" : ("integer") 4673,
+	"no_species": 375,
+	"animals": 
+		[("animal") "elephant",  
+		 ("animal") "otter", 
+		 ("animal") "gnu"]
+}
