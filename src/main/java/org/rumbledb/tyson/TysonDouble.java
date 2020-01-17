@@ -1,4 +1,4 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 /**
  * Represents the <code>TYSON</code> double value.

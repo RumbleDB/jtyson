@@ -1,7 +1,21 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 
 import java.math.BigDecimal;
+
+import org.rumbledb.tyson.JavaTysonVisitor;
+import org.rumbledb.tyson.TysonArray;
+import org.rumbledb.tyson.TysonBoolean;
+import org.rumbledb.tyson.TysonDecimal;
+import org.rumbledb.tyson.TysonDouble;
+import org.rumbledb.tyson.TysonInstance;
+import org.rumbledb.tyson.TysonInteger;
+import org.rumbledb.tyson.TysonNull;
+import org.rumbledb.tyson.TysonObject;
+import org.rumbledb.tyson.TysonString;
+import org.rumbledb.tyson.TysonUserDefinedArray;
+import org.rumbledb.tyson.TysonUserDefinedAtomic;
+import org.rumbledb.tyson.TysonUserDefinedObject;
 
 import junit.framework.TestCase;
 

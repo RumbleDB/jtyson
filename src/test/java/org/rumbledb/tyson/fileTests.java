@@ -1,9 +1,11 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import org.rumbledb.tyson.TysonInstance;
 
 import junit.framework.TestCase;
 

@@ -1,5 +1,5 @@
 // Generated from tyson.g4 by ANTLR 4.7.1
-package antlr_generated_files;
+package org.rumbledb.tyson.antlr.generated;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;

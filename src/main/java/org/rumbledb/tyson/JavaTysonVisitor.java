@@ -1,11 +1,11 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-import antlr_generated_files.tysonBaseVisitor;
-import antlr_generated_files.tysonParser;
+import org.rumbledb.tyson.antlr.generated.tysonBaseVisitor;
+import org.rumbledb.tyson.antlr.generated.tysonParser;
 
 /**
  * Visitor for recursively building a <code>TysonInstance</code> from a <code>TYSON</code> text.

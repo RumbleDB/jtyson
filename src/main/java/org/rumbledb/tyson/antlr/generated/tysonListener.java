@@ -1,15 +1,14 @@
 // Generated from tyson.g4 by ANTLR 4.7.1
-package antlr_generated_files;
+package org.rumbledb.tyson.antlr.generated;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
-
-import antlr_generated_files.tysonParser.AnnotatedValueContext;
-import antlr_generated_files.tysonParser.ArrayContext;
-import antlr_generated_files.tysonParser.NumberContext;
-import antlr_generated_files.tysonParser.ObjContext;
-import antlr_generated_files.tysonParser.PairContext;
-import antlr_generated_files.tysonParser.TysonContext;
-import antlr_generated_files.tysonParser.ValueContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.AnnotatedValueContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.ArrayContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.NumberContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.ObjContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.PairContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.TysonContext;
+import org.rumbledb.tyson.antlr.generated.tysonParser.ValueContext;
 
 /**
  * This interface defines a complete listener for a parse tree produced by

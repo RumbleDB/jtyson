@@ -1,4 +1,4 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 import java.util.ArrayList;
 import java.util.List;

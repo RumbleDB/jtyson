@@ -1,14 +1,13 @@
-package org.tyson_spec.tyson.TysonInstance;
+package org.rumbledb.tyson;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-
-import antlr_generated_files.tysonLexer;
-import antlr_generated_files.tysonParser;
-import antlr_generated_files.tysonParser.TysonContext;
+import org.rumbledb.tyson.antlr.generated.tysonLexer;
+import org.rumbledb.tyson.antlr.generated.tysonParser;
+import org.rumbledb.tyson.antlr.generated.tysonParser.TysonContext;
 
 /**
  * Represents an instance of a <code>TYSON</code> value and
