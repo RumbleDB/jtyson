@@ -1,0 +1,39 @@
+"(\"my-array\") { \"foo\" : \"bar\" }"
+"(\"boolean\") \"true\""
+"(\"string\") false"
+"(\"string\") null"
+"(\"integer\") \"2\""
+"(\"customType\") {\n" + 
+    			"  \"a\" : (\"date\") \"2018-05-28\",\n" + 
+    			"  \"b\" : (\"my-array-type\") [ (\"int\") 1, (\"short\") 2, 3, (\"zipcode\") 8000 ],\n" + 
+    			"  \"c\" : (\"xyType\") {\n" + 
+    			"    \"x\" : \"xxx\",\n" + 
+    			"    \"y\" : (\"myString\") \"yyy\",\n" + 
+    			"    \"z\" : (\"string\") true\n" + 
+    			"  },\n" + 
+    			"  \"d\" : [ \"foo\", \"bar\", true, (\"boolean\") \"false\"]\n" + 
+    			"  }"
+"{\n" + 
+    			"  \"a\" : [ 1, 2.2, 3e6],\n" + 
+    			"  \"b\" : null,\n" + 
+    			"  \"c\" : true,\n" + 
+    			"  \"d\" : {\n" + 
+    			"    \"e\" : false\n" + 
+    			"  }\n" + 
+    			"}"
+"(\"object\") {\n" + 
+    			"  \"a\" : (\"array\") [ (\"integer\") 1, (\"decimal\") 2.2, (\"double\") 3e6],\n" + 
+    			"  \"b\" : (\"null\") null,\n" + 
+    			"  \"c\" : (\"boolean\") true,\n" + 
+    			"  \"d\" : (\"object\") {\n" + 
+    			"    \"e\" : (\"boolean\") false\n" + 
+    			"  }\n" + 
+    			"}"
+"(\"object\") {\n" + 
+    			"  \"a\" : (\"array\") [ (\"integer\") \"1\", (\"decimal\") \"2.2\", (\"double\") \"3e6\"],\n" + 
+    			"  \"b\" : (\"null\") \"null\",\n" + 
+    			"  \"c\" : (\"boolean\") \"true\",\n" + 
+    			"  \"d\" : (\"object\") {\n" + 
+    			"    \"e\" : (\"boolean\") \"false\"\n" + 
+    			"  }\n" + 
+    			"}"

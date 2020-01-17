@@ -15,9 +15,9 @@ public class fileTests extends TestCase {
 	public void testFile() {
 		
 	
-
+		
 		try {
-		    String content = new String(Files.readAllBytes(Paths.get("src/test/java/org/tyson_spec/tyson/TysonInstance/tyson_types.txt")));
+		    String content = new String(Files.readAllBytes(Paths.get("src/test/java/org/rumbledb/tyson/tyson_types.txt")));
 
 			TysonInstance parsedFromFile = TysonInstance.parseFromString(content);
 			System.out.println("test tyson instance: " + parsedFromFile);
@@ -94,7 +94,9 @@ public class fileTests extends TestCase {
 			assertEquals("(\"flower-colours\")", userdefined_obj.getTypeName());
 			assertEquals("purple", userdefined_obj.getItem("Iris").getStringValue());
 			
-			String zooFile = new String(Files.readAllBytes(Paths.get("src/test/java/org/tyson_spec/tyson/TysonInstance/zoo_example.txt")));
+			
+			
+			String zooFile = new String(Files.readAllBytes(Paths.get("src/test/java/org/rumbledb/tyson/zoo_example.txt")));
 
 			TysonInstance zoo = TysonInstance.parseFromString(zooFile);
 			System.out.println("test tyson instance: " + zoo);
