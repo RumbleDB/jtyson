@@ -1,0 +1,2 @@
+("decimal") 2.2
+("decimal") "2.2"

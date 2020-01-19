@@ -1,0 +1,1 @@
+("object"){ "a" : ("array") [ ("integer") 1, ("decimal") 2.2, ("double") 3e6, ("string") "hello"], "b" : ("null") null, "c" : ("boolean") true, "d" : ("object") { "e" : ("boolean") false } }

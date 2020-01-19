@@ -1,0 +1,5 @@
+("decimal") 2.0
+("double") "2e3"
+("string") 2e3
+("decimal") "2e3"
+("double") "2.3"

@@ -13,7 +13,7 @@ public class performanceTest extends TestCase {
 	BufferedReader reader;
 	try {
 		reader = new BufferedReader(new FileReader(
-				"src/test/java/org/rumbledb/tyson/LineByLineTests.txt"));	
+				"src/test/java/org/rumbledb/tyson/SpecificationExamples.txt"));	
 		
 		String line = reader.readLine();
 		while (line != null) {
