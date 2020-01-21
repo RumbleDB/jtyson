@@ -391,7 +391,37 @@ public class TestsVisitor extends TestCase {
     public void testUDTArray() {
 		System.out.println("TESTING UDTARRAYS:");
 
-    	//TODO: implement UDTarray tests
+		BufferedReader reader;
+    	try {
+    		reader = new BufferedReader(new FileReader(
+    				"src/test/java/org/rumbledb/tyson/UserdefinedArrayTests.txt"));	
+    		
+    		String udaString01 = reader.readLine();
+    		TysonInstance udArray01 = TysonInstance.parseFromString(udaString01);
+        	assertEquals(3, udArray01.arraySize());
+        	assertTrue(udArray01.isUserDefinedType());
+        	assertEquals("(\"animals\")", udArray01.getTypeName());
+        	assertTrue(udArray01.getItem(0).isString());
+    	   	
+        	String udaString02 = reader.readLine();
+    		TysonInstance udArray02 = TysonInstance.parseFromString(udaString02);
+    		assertEquals(0, udArray02.arraySize());
+    		TysonInstance animal = TysonFactory.getInstance().createString("ozelot");
+    		udArray02.appendElement(animal);
+    		System.out.println(udArray02);
+    		assertEquals(1, udArray02.arraySize());
+    		
+    		String udaString03 = reader.readLine();
+    		TysonInstance udArray03 = TysonInstance.parseFromString(udaString03);
+    		assertEquals(1, udArray03.arraySize());
+    		assertEquals("otter", udArray03.getItem(0).getStringValue());
+    		udArray03.setItem(0, animal);
+    		assertEquals("ozelot", udArray03.getItem(0).getStringValue());
+           	
+    		reader.close();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
     }
     
     /**

@@ -1,0 +1,3 @@
+("animals") ["gorilla", ("string") "zebra", ("string") "gorilla"]
+("animals") []
+("animals") ["otter"]
