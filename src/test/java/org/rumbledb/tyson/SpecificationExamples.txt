@@ -1,0 +1,10 @@
+("my-array") { "foo" : "bar" }
+("boolean") "true"
+("string") false
+("string") null
+("integer") "2"
+("customType") { "a" : ("date") "2018-05-28", "b" : ("my-array-type") [ ("int") 1, ("short") 2, 3, ("zipcode") 8000 ], "c" : ("xyType") { "x" : "xxx", "y" : ("myString") "yyy", "z" : ("string") true }, "d" : [ "foo", "bar", true, ("boolean") "false"] }
+{"a" : [ 1, 2.2, 3e6], "b" : null, "c" : true, "d" : { "e" : false }}
+("object") {"a" : ("array") [ ("integer") 1, ("decimal") 2.2, ("double") 3e6], "b" : ("null") null, "c" : ("boolean") true, "d" : ("object") { "e" : ("boolean") false } }
+("object") {"a" : ("array") [ ("integer") "1", ("decimal") "2.2", ("double") "3e6"], "b" : ("null") "null", "c" : ("boolean") "true", "d" : ("object") { "e" : ("boolean") "false" } }
+("boolean") true

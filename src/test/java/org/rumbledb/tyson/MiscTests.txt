@@ -1,0 +1,4 @@
+("string") "hello"
+("integer") 42
+("decimal") 42.22
+("array") [1,2,3]

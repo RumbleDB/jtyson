@@ -1,0 +1,5 @@
+("double") 3e6
+("double") "3e6"
+("double") "+INF"
+("double") "-INF"
+("double") "NaN"

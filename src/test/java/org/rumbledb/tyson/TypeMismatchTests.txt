@@ -1,0 +1,12 @@
+("integer") 1.1
+("double") "test"
+("null") "test"
+("string") {}
+("array") "foo"
+("boolean") "bar"
+("boolean") "yes"
+("integer") { "foo" : "bar" }
+("array") { "foo" : "bar" }
+("integer") "foo"
+("integer") "2.0"
+("object") true
