@@ -43,6 +43,15 @@ public class TysonUserDefinedAtomic extends TysonInstance{
 		List<String> builtinTypes = Arrays.asList("string", "integer", "decimal", "double", "boolean", "null", "object", "array");
 
 		if(!builtinTypes.contains(name)) {
+			char first = name.charAt(0);
+			char last = name.charAt(name.length() - 1);
+						
+			if(!(first=='"' && last=='"')) {
+				name = '"' + name + '"';
+				System.out.println("newName: " +name);
+
+			}
+			
 			this.typeName = "(" + name + ")";
 			this.litValue = ti.getLexicalValue();
 		} else throw new RuntimeException("Trying to build user defined type with type annotation from built-ins");
