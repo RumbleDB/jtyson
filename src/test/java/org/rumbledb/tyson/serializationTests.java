@@ -22,9 +22,9 @@ public class serializationTests extends TestCase {
 		testObject.addPair("int", testInteger);
 		testObject.addPair("dec", testDecimal);
 		
-		TysonUserDefinedAtomic testUDAtomic = TysonFactory.getInstance().createUserDefinedAtomic("\"myAtomic\"", testDouble);
-		TysonUserDefinedArray testUDA = TysonFactory.getInstance().createUserDefinedArray("\"myArray\"", testArray);
-		TysonUserDefinedObject testUDO = TysonFactory.getInstance().createUserDefinedObject("\"myObject\"", testObject);
+		TysonUserDefinedAtomic testUDAtomic = TysonFactory.getInstance().createUserDefinedAtomic("myAtomic", testDouble);
+		TysonUserDefinedArray testUDA = TysonFactory.getInstance().createUserDefinedArray("myArray", testArray);
+		TysonUserDefinedObject testUDO = TysonFactory.getInstance().createUserDefinedObject("myObject", testObject);
 		
 		assertEquals("(\"array\") [ (\"boolean\") true, (\"integer\") 8 ]", testArray.toString());
 		assertEquals("(\"boolean\") true", testBooleanTrue.toString());

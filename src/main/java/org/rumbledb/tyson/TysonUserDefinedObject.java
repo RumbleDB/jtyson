@@ -35,6 +35,15 @@ public class TysonUserDefinedObject extends TysonObject{
 		List<String> builtinTypes = Arrays.asList("string", "integer", "decimal", "double", "boolean", "null", "object", "array");
 		
 		if(!builtinTypes.contains(name)) {
+			char first = name.charAt(0);
+			char last = name.charAt(name.length() - 1);
+						
+			if(!(first=='"' && last=='"')) {
+				name = '"' + name + '"';
+				System.out.println("newName: " +name);
+
+			}
+			
 			this.typeName = "(" + name + ")";
 			members = ((TysonObject)ti).members;
 			orderList = ((TysonObject)ti).orderList;
