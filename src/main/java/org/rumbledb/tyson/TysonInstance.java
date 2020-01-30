@@ -69,7 +69,9 @@ public class TysonInstance {
     	return ty;
     }
 	
-
+	/**
+	 * Converts a <code>TysonInstance</code> to its syntactical string representation.
+	 */
 	@Override
 	public String toString() {
 		throw new RuntimeException("toString() not defined");
