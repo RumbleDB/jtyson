@@ -281,13 +281,20 @@ public class TestsVisitor extends TestCase {
 			reader = new BufferedReader(new FileReader(
 					"src/test/java/org/rumbledb/tyson/StringTests.txt"));	
 			
-			String stringInput = reader.readLine();
-			TysonInstance testString = TysonInstance.parseFromString(stringInput);
+			String stringInput01 = reader.readLine();
+			String stringInput02 = reader.readLine();
+			TysonInstance testString = TysonInstance.parseFromString(stringInput01);
+			//TysonInstance testString02 = TysonInstance.parseFromString(stringInput02);
 
 			assertEquals(false, testString.isDecimal());
 	    	assertEquals(true, testString.isString());
 	    	assertEquals("hello", testString.getStringValue());
 	    	assertEquals("hello", testString.getLexicalValue());
+	    	
+	    	
+	    	//assertEquals(true, testString02.isString());
+	    	//assertEquals("hello", testString02.getStringValue());
+	    	//assertEquals("hello", testString02.getLexicalValue());
 	    	
 	    	assertTrue(testString.isAtomic());
 	    	
@@ -859,6 +866,10 @@ public class TestsVisitor extends TestCase {
         	
         	TysonInstance a03 = TysonInstance.parseFromString(accept03);
         	assertEquals(true, a03.isString());;
+        	//System.out.println(a03);
+        	//System.out.println(a03.getStringValue());
+        	//System.out.println(a03.getLexicalValue());
+
     		
         	TysonInstance a04 = TysonInstance.parseFromString(accept04);
         	assertEquals(true, a04.isString());

@@ -78,8 +78,13 @@ public class JavaTysonVisitor extends tysonBaseVisitor{
 					
 						if(! (ty.getStringValue().contains("e")||ty.getStringValue().contains("E"))) {
 							
-							BigDecimal decimalFromString = new BigDecimal(ty.getStringValue());
-							return TysonFactory.getInstance().createDecimal(decimalFromString);
+							try {
+								BigDecimal decimalFromString = new BigDecimal(ty.getStringValue());
+								return TysonFactory.getInstance().createDecimal(decimalFromString);
+							} catch(NumberFormatException e) {
+								throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
+							}
+							
 							
 						}	
 						else throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
@@ -170,7 +175,7 @@ public class JavaTysonVisitor extends tysonBaseVisitor{
 				}
 				else if(ty.isDecimal()) {
 					return TysonFactory.getInstance().createString(ty.getDecimalValue().toEngineeringString());
-				}
+				} 
 				else throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
 			}
 		}
