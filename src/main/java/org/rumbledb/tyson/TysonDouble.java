@@ -44,7 +44,17 @@ public class TysonDouble extends TysonInstance  {
 	 * Gets the syntactical representation of this {@link TysonDouble} value.
 	 */
 	public String getLexicalValue() {
-		return Double.toString(this.value);
+		String doubleAsString = Double.toString(this.value);
+		 	if(doubleAsString == "Infinity") {
+						
+				doubleAsString = "+INF";
+						
+			} else if (doubleAsString == "-Infinity") {
+						
+				doubleAsString = "-INF";
+						
+			}
+		 	return doubleAsString;
 	}
 	
 	/**
@@ -69,11 +79,11 @@ public class TysonDouble extends TysonInstance  {
 			
 			doubleAsStr = "\"" + doubleAsStr + "\"";
 			
-		} else if(doubleAsStr == "Infinity") {
+		} else if(doubleAsStr == "+INF") {
 			
 			doubleAsStr = "\"+INF\"";
 			
-		} else if (doubleAsStr == "-Infinity") {
+		} else if (doubleAsStr == "-INF") {
 			
 			doubleAsStr = "\"-INF\"";
 			

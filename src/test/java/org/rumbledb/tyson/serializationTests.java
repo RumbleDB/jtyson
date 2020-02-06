@@ -15,6 +15,13 @@ public class serializationTests extends TestCase {
 		TysonNull testNull = TysonFactory.getInstance().createNull();
 		TysonObject testObject = TysonFactory.getInstance().createObject();
 		TysonString testString = TysonFactory.getInstance().createString("otter");
+		TysonDouble testSpecialValue = TysonFactory.getInstance().createDouble(Double.POSITIVE_INFINITY);
+		
+		String serializedDouble = testSpecialValue.toString();
+		System.out.println("special value is: "+ serializedDouble);
+		TysonInstance deserialized = TysonInstance.parseFromString(serializedDouble);
+		System.out.println(deserialized);
+		System.out.println(deserialized.getLexicalValue());
 		
 		testArray.appendElement(testBooleanTrue);
 		testArray.appendElement(testInteger);
