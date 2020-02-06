@@ -85,7 +85,6 @@ public class JavaTysonVisitor extends tysonBaseVisitor{
 								throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
 							}
 							
-							
 						}	
 						else throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
 
@@ -114,9 +113,13 @@ public class JavaTysonVisitor extends tysonBaseVisitor{
 							return TysonFactory.getInstance().createDouble(Double.NEGATIVE_INFINITY);
 							
 						} else if (!ty.getStringValue().contains(".")){
-														
-							double doubleFromString = Double.parseDouble(ty.getStringValue());
-							return TysonFactory.getInstance().createDouble(doubleFromString);
+							
+							try {
+								double doubleFromString = Double.parseDouble(ty.getStringValue());
+								return TysonFactory.getInstance().createDouble(doubleFromString);
+							} catch (NumberFormatException e) {
+								throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
+							}
 						}
 
 						else throw new RuntimeException("Annotated type "+ typeName.intern() + " does not match instanciated type");
