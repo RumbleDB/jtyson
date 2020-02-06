@@ -64,6 +64,6 @@ public class TysonString extends TysonInstance {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.getLexicalValue();
+		return this.getTypeName() + " " + "\""+ this.getLexicalValue() +"\"";
 	}
 }

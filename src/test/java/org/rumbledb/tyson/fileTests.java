@@ -99,6 +99,8 @@ public class fileTests extends TestCase {
 			String zooFile = new String(Files.readAllBytes(Paths.get("src/test/java/org/rumbledb/tyson/zoo_example.txt")));
 
 			TysonInstance zoo = TysonInstance.parseFromString(zooFile);
+			
+			Files.writeString(Paths.get("src/test/java/org/rumbledb/tyson/written_file.txt"), zoo.toString());
 			System.out.println("test tyson instance: " + zoo);
 		} catch (IOException e) {
 			e.printStackTrace();

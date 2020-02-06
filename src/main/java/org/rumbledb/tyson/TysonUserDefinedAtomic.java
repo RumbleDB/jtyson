@@ -91,7 +91,7 @@ public class TysonUserDefinedAtomic extends TysonInstance{
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.litValue; 
+		return this.getTypeName() + " " + "\""+ this.litValue+"\""; 
 	}
 	
 	

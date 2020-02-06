@@ -113,7 +113,7 @@ public class TysonObject extends TysonInstance  {
 	    	for (int i = 0; i< size; i++) {
 				String key = keyList.get(i);
 				TysonInstance value = this.getItem(key);
-				litObj[i] = key + " : " + value.toString();
+				litObj[i] = "\""+key+"\"" + " : " + value.toString();
 			}
 			String res = String.join(", ", litObj);
 			res = this.getTypeName() + " { " + res + " }";
