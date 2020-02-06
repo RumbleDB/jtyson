@@ -63,7 +63,7 @@ public class TysonDouble extends TysonInstance  {
 
 	@Override
 	public String toString() {
-		String doubleAsStr = Double.toString(this.value);
+		String doubleAsStr = this.getLexicalValue();
 
 		if(doubleAsStr == "NaN") {
 			

@@ -62,7 +62,7 @@ public class TysonBoolean extends TysonInstance {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + String.valueOf(this.value);
+		return this.getTypeName() + " " + this.getLexicalValue();
 	}
 	
 }

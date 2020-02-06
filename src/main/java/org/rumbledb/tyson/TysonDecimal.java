@@ -66,7 +66,7 @@ public class TysonDecimal extends TysonInstance  {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.value.toEngineeringString();
+		return this.getTypeName() + " " + this.getLexicalValue();
 	}
 	
 
