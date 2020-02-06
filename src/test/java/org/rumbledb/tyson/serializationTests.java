@@ -32,11 +32,11 @@ public class serializationTests extends TestCase {
 		assertEquals("(\"double\") 3.0E8", testDouble.toString());
 		assertEquals("(\"integer\") 8", testInteger.toString());
 		assertEquals("(\"null\") null", testNull.toString());
-		assertEquals("(\"object\") { int : (\"integer\") 8, dec : (\"decimal\") 4.9000000000000003552713678800500929355621337890625 }", testObject.toString());
-		assertEquals("(\"string\") otter", testString.toString());
-		assertEquals("(\"myAtomic\") 3.0E8", testUDAtomic.toString());
+		assertEquals("(\"object\") { \"int\" : (\"integer\") 8, \"dec\" : (\"decimal\") 4.9000000000000003552713678800500929355621337890625 }", testObject.toString());
+		assertEquals("(\"string\") \"otter\"", testString.toString());
+		assertEquals("(\"myAtomic\") \"3.0E8\"", testUDAtomic.toString());
 		assertEquals("(\"myArray\") [ (\"boolean\") true, (\"integer\") 8 ]", testUDA.toString());
-		assertEquals("(\"myObject\") { int : (\"integer\") 8, dec : (\"decimal\") 4.9000000000000003552713678800500929355621337890625 }", testUDO.toString());
+		assertEquals("(\"myObject\") { \"int\" : (\"integer\") 8, \"dec\" : (\"decimal\") 4.9000000000000003552713678800500929355621337890625 }", testUDO.toString());
 		
 		System.out.println(testArray);
 		System.out.println(testBooleanTrue);
