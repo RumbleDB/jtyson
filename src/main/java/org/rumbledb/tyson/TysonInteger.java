@@ -62,7 +62,7 @@ public class TysonInteger extends TysonInstance  {
 	
 	@Override
 	public String toString() {
-		return "(\")" + this.getTypeName() + "\")" + " " + this.getLexicalValue();
+		return "(\"" + this.getTypeName() + "\")" + " " + this.getLexicalValue();
 	}
 
 }
