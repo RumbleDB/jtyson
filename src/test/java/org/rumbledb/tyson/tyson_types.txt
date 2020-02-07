@@ -3,24 +3,18 @@
 				"integer-annotated" : 			("integer")	2,
 				"integer-not-annotated":		2,
 				"integer-annotated-quotes":		("integer") "2",
-				"integer-not-annotated-quotes": "2",
 				
 				"double-annotated" : 			("double")	2e3,
 				"double-not-annotated":			2e3,
 				"double-annotated-quotes":		("double") "2e3",
-				"double-not-annotated-quotes": 	"2e3",
 				"double-like-integer" :			("double") 2,
 				"double-NaN-annotated" :		("double") "NaN",
-				"double-NaN-not-annotated" :	"NaN",
 				"double-+INF-annotated" :		("double") "+INF",
-				"double-+INF-not-annotated" :	"+INF",
 				"double--INF-annotated" :		("double") "-INF",
-				"double--INF-not-annotated" :	"-INF",
 				
 				"decimal-annotated" : 			("decimal")	2.3,
 				"decimal-not-annotated":		2.3,
 				"decimal-annotated-quotes":		("decimal") "2.3",
-				"decimal-not-annotated-quotes": "2.3",
 				"decimal-like-integer" :		("decimal") 2
 	},
 	"string-examples" : {

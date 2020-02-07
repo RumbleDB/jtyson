@@ -44,6 +44,18 @@ public class TestsVisitor extends TestCase {
 
 			String integerString2 = reader.readLine();
 			TysonInstance testInt2 = TysonInstance.parseFromString(integerString2);
+			
+			String integerString3 = reader.readLine();
+			TysonInstance testUnannotated = TysonInstance.parseFromString(integerString3);
+			
+			boolean thrown = false;
+			try {
+				String integerString4 = reader.readLine();
+				TysonInstance testString = TysonInstance.parseFromString(integerString4);
+			}catch(RuntimeException e) {
+				thrown = true;
+			}
+			assertTrue(thrown);
 
 			assertEquals(1, testInt.getIntegerValue());
 	    	assertEquals("1", testInt.getLexicalValue());
@@ -61,6 +73,10 @@ public class TestsVisitor extends TestCase {
 	    	assertEquals(testInt.toString(), testInt2.toString());
 	    	
 	    	assertTrue(testInt.isAtomic());
+	    	
+	    	assertEquals(4, testUnannotated.getIntegerValue());
+	    	assertEquals("4", testUnannotated.getLexicalValue());
+	    	assertEquals("integer", testUnannotated.getTypeName());
 			
 			reader.close();
 		} catch (IOException e) {
@@ -87,6 +103,24 @@ public class TestsVisitor extends TestCase {
 			String decimalString2 = reader.readLine();
 			TysonInstance testDecimal2 = TysonInstance.parseFromString(decimalString2);
 			
+			String decimalString3 = reader.readLine();
+			TysonInstance integerAsDecimal = TysonInstance.parseFromString(decimalString3);
+			
+			String decimalString4 = reader.readLine();
+			TysonInstance unquotedDecimal = TysonInstance.parseFromString(decimalString4);
+			
+			String decimalString5 = reader.readLine();
+			TysonInstance stringIntegerAsDecimal = TysonInstance.parseFromString(decimalString5);
+			
+			
+			boolean thrown = false;
+			try {
+				String decimalString6 = reader.readLine();
+				TysonInstance stringAsDecimal = TysonInstance.parseFromString(decimalString6);
+			}catch(RuntimeException e) {
+				thrown = true;
+			}
+			assertTrue(thrown);
 			
 			assertEquals(BigDecimal.valueOf(2.2), testDecimal.getDecimalValue());
 	    	assertEquals("2.2", testDecimal.getLexicalValue());
@@ -102,6 +136,18 @@ public class TestsVisitor extends TestCase {
 	    	assertEquals(testDecimal.toString(), testDecimal2.toString());
 	    	
 	    	assertTrue(testDecimal.isAtomic());
+	    	
+	    	assertEquals(new BigDecimal("2"), integerAsDecimal.getDecimalValue());
+	    	assertEquals("2", integerAsDecimal.getLexicalValue());
+	    	assertEquals("decimal", integerAsDecimal.getTypeName());
+	    	
+	    	assertTrue(unquotedDecimal.isDecimal());
+	    	assertEquals(new BigDecimal("1.2"), unquotedDecimal.getDecimalValue());
+	    	assertEquals("1.2", unquotedDecimal.getLexicalValue());
+	    	
+	    	assertTrue(stringIntegerAsDecimal.isDecimal());
+	    	assertEquals(new BigDecimal("2"), stringIntegerAsDecimal.getDecimalValue());
+	    	assertEquals("2", stringIntegerAsDecimal.getLexicalValue());
 	    	
 			reader.close();
 		} catch (IOException e) {
@@ -404,6 +450,7 @@ public class TestsVisitor extends TestCase {
         	assertEquals("1.4", Tudt.getLexicalValue());
         	
         	assertEquals("integeR", udaNonQuoted.getTypeName());
+        	assertEquals("(\"integeR\") \"3\"", udaNonQuoted.toString());
         	
     		reader.close();
     	} catch (IOException e) {
@@ -470,6 +517,7 @@ public class TestsVisitor extends TestCase {
            	assertEquals(true, Tbig_udt.isObject());
            	assertEquals(true, Tbig_udt.getItem("Employee-0342F").isUserDefinedType());
            	assertEquals("my-object", Tbig_udt.getTypeName());
+           	assertEquals(udoString, Tbig_udt.toString());
            	
     		reader.close();
     	} catch (IOException e) {
