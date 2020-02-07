@@ -3,3 +3,5 @@
 ("double") "+INF"
 ("double") "-INF"
 ("double") "NaN"
+("double") "+INF"
+("double") "-INF"

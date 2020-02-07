@@ -37,7 +37,7 @@ public class TysonNull extends TysonInstance  {
 	 * Gets the String name of the {@link TysonNull} type.
 	 */
 	public String getTypeName() {
-		return "(\"null\")";
+		return "null";
 	}
 
 	/**

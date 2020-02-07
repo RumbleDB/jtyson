@@ -48,14 +48,14 @@ public class TestsVisitor extends TestCase {
 			assertEquals(1, testInt.getIntegerValue());
 	    	assertEquals("1", testInt.getLexicalValue());
 	    	assertEquals(true, testInt.isInteger());
-	    	assertEquals("(\"integer\")", testInt.getTypeName());
+	    	assertEquals("integer", testInt.getTypeName());
 	    	assertEquals(true, testInt.isAtomic());
 	    	assertEquals(false, testInt.isDouble());
 
 	    	assertEquals(1, testInt2.getIntegerValue());
 	    	assertEquals("1", testInt2.getLexicalValue());
 	    	assertEquals(true, testInt2.isInteger());
-	    	assertEquals("(\"integer\")", testInt2.getTypeName());
+	    	assertEquals("integer", testInt2.getTypeName());
 	    	assertEquals(true, testInt2.isAtomic());
 	    	
 	    	assertEquals(testInt.toString(), testInt2.toString());
@@ -91,12 +91,12 @@ public class TestsVisitor extends TestCase {
 			assertEquals(BigDecimal.valueOf(2.2), testDecimal.getDecimalValue());
 	    	assertEquals("2.2", testDecimal.getLexicalValue());
 	    	assertEquals(true, testDecimal.isDecimal());
-	    	assertEquals("(\"decimal\")", testDecimal.getTypeName());
+	    	assertEquals("decimal", testDecimal.getTypeName());
 	    	
 	    	assertEquals(BigDecimal.valueOf(2.2), testDecimal2.getDecimalValue());
 	    	assertEquals("2.2", testDecimal2.getLexicalValue());
 	    	assertEquals(true, testDecimal2.isDecimal());
-	    	assertEquals("(\"decimal\")", testDecimal2.getTypeName());
+	    	assertEquals("decimal", testDecimal2.getTypeName());
 	    	
 	    	
 	    	assertEquals(testDecimal.toString(), testDecimal2.toString());
@@ -135,23 +135,38 @@ public class TestsVisitor extends TestCase {
 			TysonInstance testDouble4 = TysonInstance.parseFromString(doubleString4);
 
 			String doubleString5 = reader.readLine();
-			TysonInstance testDouble5 = TysonInstance.parseFromString(doubleString5);
+			TysonInstance testDoubleNaN = TysonInstance.parseFromString(doubleString5);
+			
+			String doubleString6 = reader.readLine();
+			TysonInstance testDoublePosINF = TysonInstance.parseFromString(doubleString6);
+			
+			String doubleString7 = reader.readLine();
+			TysonInstance testDoubleNegINF = TysonInstance.parseFromString(doubleString7);
 
 			assertEquals(3e6, testDouble.getDoubleValue());
 	    	assertEquals("3000000.0", testDouble.getLexicalValue());
 	    	assertEquals(true, testDouble.isDouble());
-	    	assertEquals("(\"double\")", testDouble.getTypeName());
+	    	assertEquals("double", testDouble.getTypeName());
 	    	assertEquals(true, testDouble.isAtomic());
 	    	
 	    	assertEquals(3e6, testDouble2.getDoubleValue());
 	    	assertEquals("3000000.0", testDouble2.getLexicalValue());
 	    	assertEquals(true, testDouble2.isDouble());
-	    	assertEquals("(\"double\")", testDouble2.getTypeName());
+	    	assertEquals("double", testDouble2.getTypeName());
 	    	assertEquals(true, testDouble2.isAtomic());
 	    	
 	    	assertEquals(testDouble.toString(), testDouble2.toString());
 	    	
 	    	assertTrue(testDouble.isAtomic());
+	    	
+	    	assertEquals("NaN", testDoubleNaN.getLexicalValue());
+	    	assertEquals("+INF", testDoublePosINF.getLexicalValue());
+	    	assertEquals("-INF", testDoubleNegINF.getLexicalValue());
+	    	
+	    	assertEquals("(\"double\") \"NaN\"", testDoubleNaN.toString());
+	    	assertEquals("(\"double\") \"+INF\"", testDoublePosINF.toString());
+	    	assertEquals("(\"double\") \"-INF\"", testDoubleNegINF.toString());
+
 	    	
 			reader.close();
 		} catch (IOException e) {
@@ -177,7 +192,7 @@ public class TestsVisitor extends TestCase {
 			assertEquals(true, testNull.isNull());
 	    	assertEquals(false, testNull.isInteger());
 	    	assertEquals("null", testNull.getLexicalValue());
-	    	assertEquals("(\"null\")", testNull.getTypeName());
+	    	assertEquals("null", testNull.getTypeName());
 	    	
 	    	assertTrue(testNull.isAtomic());
 	    	
@@ -379,11 +394,16 @@ public class TestsVisitor extends TestCase {
     		
     		String atomicString = reader.readLine();
         	TysonInstance Tudt = TysonInstance.parseFromString(atomicString);
+        	
+        	String atomicString2 = reader.readLine();
+        	TysonInstance udaNonQuoted = TysonInstance.parseFromString(atomicString2);
 
         	assertEquals(true, Tudt.isUserDefinedType());
         	assertEquals(true, Tudt.isAtomic());
         	
         	assertEquals("1.4", Tudt.getLexicalValue());
+        	
+        	assertEquals("integeR", udaNonQuoted.getTypeName());
         	
     		reader.close();
     	} catch (IOException e) {
@@ -407,7 +427,7 @@ public class TestsVisitor extends TestCase {
     		TysonInstance udArray01 = TysonInstance.parseFromString(udaString01);
         	assertEquals(3, udArray01.arraySize());
         	assertTrue(udArray01.isUserDefinedType());
-        	assertEquals("(\"animals\")", udArray01.getTypeName());
+        	assertEquals("animals", udArray01.getTypeName());
         	assertTrue(udArray01.getItem(0).isString());
     	   	
         	String udaString02 = reader.readLine();
@@ -449,7 +469,7 @@ public class TestsVisitor extends TestCase {
            	assertEquals(true, Tbig_udt.isUserDefinedType());
            	assertEquals(true, Tbig_udt.isObject());
            	assertEquals(true, Tbig_udt.getItem("Employee-0342F").isUserDefinedType());
-           	assertEquals("(\"my-object\")", Tbig_udt.getTypeName());
+           	assertEquals("my-object", Tbig_udt.getTypeName());
            	
     		reader.close();
     	} catch (IOException e) {

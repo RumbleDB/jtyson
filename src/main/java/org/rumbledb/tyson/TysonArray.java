@@ -72,7 +72,7 @@ public class TysonArray extends TysonInstance  {
 	 * Gets the <code>String</code> name of this {@link TysonArray} type.
 	 */
 	public String getTypeName() {
-		return "(\"array\")";
+		return "array";
 	}
 	
 	
@@ -86,7 +86,7 @@ public class TysonArray extends TysonInstance  {
 			litArr[i] = sub;
 		}
 		String res = String.join(", ", litArr);
-		res = this.getTypeName() + " [ " + res + " ]";
+		res = "(\"" + this.getTypeName() + "\")" + " [ " + res + " ]";
 		return res;
 	}
 

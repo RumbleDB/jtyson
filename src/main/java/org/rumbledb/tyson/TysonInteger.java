@@ -50,7 +50,7 @@ public class TysonInteger extends TysonInstance  {
 	 * Gets the <code>String</code> name of the {@link TysonInteger} type.
 	 */
 	public String getTypeName() {
-		return "(\"integer\")";
+		return "integer";
 	}
 	
 	/**
@@ -62,7 +62,7 @@ public class TysonInteger extends TysonInstance  {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.getLexicalValue();
+		return "(\")" + this.getTypeName() + "\")" + " " + this.getLexicalValue();
 	}
 
 }

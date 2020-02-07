@@ -1,1 +1,2 @@
 ("my-atomic-type") "1.4"
+("integeR") 3

@@ -61,7 +61,7 @@ public class TysonDouble extends TysonInstance  {
 	 * Gets the String name of the {@link TysonDouble} type.
 	 */
 	public String getTypeName() {
-		return "(\"double\")";
+		return "double";
 	}
 	
 	/**
@@ -89,7 +89,7 @@ public class TysonDouble extends TysonInstance  {
 			
 		}
 		
-		return this.getTypeName() + " " + doubleAsStr;
+		return "(\"" + this.getTypeName() + "\")" + " " + doubleAsStr;
 	}
 
 }

@@ -54,7 +54,7 @@ public class TysonDecimal extends TysonInstance  {
 	 * Gets the String name of the {@link TysonDecimal} type.
 	 */
 	public String getTypeName() {
-		return "(\"decimal\")";
+		return "decimal";
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class TysonDecimal extends TysonInstance  {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.getLexicalValue();
+		return "(\"" + this.getTypeName() +"\")" + " " + this.getLexicalValue();
 	}
 	
 

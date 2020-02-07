@@ -38,13 +38,13 @@ public class TysonUserDefinedObject extends TysonObject{
 			char first = name.charAt(0);
 			char last = name.charAt(name.length() - 1);
 						
-			if(!(first=='"' && last=='"')) {
-				name = '"' + name + '"';
-				System.out.println("newName: " +name);
-
+			if((first=='"' && last=='"')) {
+				int len = name.length();
+				name = (String) name.subSequence(1, len-1);
+				//System.out.println("newName: " +name);
 			}
 			
-			this.typeName = "(" + name + ")";
+			this.typeName = name;
 			members = ((TysonObject)ti).members;
 			orderList = ((TysonObject)ti).orderList;
 		} else throw new RuntimeException("Trying to build user defined object with type annotation from built-ins");

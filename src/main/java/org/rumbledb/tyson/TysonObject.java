@@ -100,7 +100,7 @@ public class TysonObject extends TysonInstance  {
 	 * Gets the <code>String</code> name of this {@link TysonObject} type.
 	 */
     public String getTypeName() {
-		return "(\"object\")";
+		return "object";
 	}
     
 	 @Override
@@ -116,7 +116,7 @@ public class TysonObject extends TysonInstance  {
 				litObj[i] = "\""+key+"\"" + " : " + value.toString();
 			}
 			String res = String.join(", ", litObj);
-			res = this.getTypeName() + " { " + res + " }";
+			res = "(\"" + this.getTypeName() + "\")" + " { " + res + " }";
 			return res;
 	    }
  

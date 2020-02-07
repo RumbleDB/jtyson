@@ -52,7 +52,7 @@ public class TysonString extends TysonInstance {
 	 * Gets the <code>String</code> name of the {@link TysonString} type.
 	 */
 	public String getTypeName() {
-		return "(\"string\")";
+		return "string";
 	}
 	
 	/**
@@ -64,6 +64,6 @@ public class TysonString extends TysonInstance {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + "\""+ this.getLexicalValue() +"\"";
+		return "(\"" + this.getTypeName() + "\")" + " " + "\""+ this.getLexicalValue() +"\"";
 	}
 }

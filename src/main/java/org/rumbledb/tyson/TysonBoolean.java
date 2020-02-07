@@ -50,7 +50,7 @@ public class TysonBoolean extends TysonInstance {
 	 * Gets the <code>String</code> name of the {@link TysonBoolean} type.
 	 */
 	public String getTypeName() {
-		return "(\"boolean\")";
+		return "boolean";
 	}
 	
 	/**
@@ -62,7 +62,7 @@ public class TysonBoolean extends TysonInstance {
 	
 	@Override
 	public String toString() {
-		return this.getTypeName() + " " + this.getLexicalValue();
+		return "(\"" + this.getTypeName() + "\")" + " " + this.getLexicalValue();
 	}
 	
 }
