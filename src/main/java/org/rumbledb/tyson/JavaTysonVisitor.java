@@ -29,7 +29,7 @@ public class JavaTysonVisitor extends tysonBaseVisitor{
 	 * If there is a type annotation present, checks that the annotated type matches the parsed value
 	 * and throws a RuntimeException if this is not the case.
 	 * For quoted values: If the value is quoted, but the type-annotation specifies a built-in type,
-	 * the Visitor checks if the quoted value belongs to the value space of the annotated type.
+	 * the Visitor checks if the quoted value belongs to the lexical space of the annotated type.
 	 * If this is true, it builds a <code>TysonInstance</code> corresponding to the annotated type.
 	 * If the annotated type name is not any of the <code>TYSON</code> built-in types, checks the implicit type
 	 * of the parsed value. 
